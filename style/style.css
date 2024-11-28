@@ -1,0 +1,81 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+section{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    height: 100vh; 
+    background-color: #000000; 
+    color: white;
+}
+.card{
+    padding: 3rem;
+    border:3px solid  rgb(255, 255, 255);
+    
+}
+header{
+    background-color: black;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 4rem;
+}
+/* .traductor{
+    display: flex;
+    justify-content:space-around; 
+    align-items: center;
+    flex-direction: column; 
+} */
+.traductor>input{
+    margin:1rem 0.9rem 1rem 0;
+}
+#word{
+    width: 20rem;
+    padding: 0.5rem;
+    border-radius:5px;
+    border: 1px solid gray;
+}
+.result{
+    background-color: rgb(146, 146, 146);
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    width: 20rem;
+    margin-left: 4rem;
+}
+.list-word{
+    margin-top: 3rem;
+}
+
+.list-word>h2{
+    margin-bottom: 2rem;
+}
+.container-list-word{
+    background-color: rgb(146, 146, 146);
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    width: 20rem;
+    margin-top: 2rem;
+    margin-left: 4rem;
+    flex-wrap: wrap;
+}
+button{
+    border: none;
+    background-color: rgb(57, 57, 176);
+    padding: 1rem;
+    margin: 1rem;
+    width: 20rem;
+    margin-left: 4rem;
+    border-radius:10px ;
+    color:  white;
+}
