@@ -47,7 +47,7 @@ function showCategoryWords(categoryName) {
     // Recorrer palabras de la categoría y mostrarlas
     for (const word of category) {
         const listItem = document.createElement('p'); // Crear un elemento <p>
-        listItem.textContent = `${word.english} - ${word.spanish} <br>`; // Asignar texto con las palabras
+        listItem.textContent = ` ingles -${word.english} / español- ${word.spanish} `; // Asignar texto con las palabras
         wordListContainer.appendChild(listItem); // Agregar al contenedor
     }
 }
