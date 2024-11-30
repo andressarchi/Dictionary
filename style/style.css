@@ -8,17 +8,17 @@ section{
     display: flex;
     justify-content: center; 
     align-items: center; 
-    height: 100vh; 
-    background-color: #000000; 
-    color: white;
+    height: 50rem; 
+    background-color: #ffffff; 
+    color: rgb(9, 9, 9);
 }
 .card{
     padding: 3rem;
-    border:3px solid  rgb(255, 255, 255);
+    border:3px solid  rgb(0, 179, 255);
     
 }
 header{
-    background-color: black;
+    background-color: rgb(0, 179, 255);
     color: white;
     display: flex;
     justify-content: center;
@@ -41,12 +41,12 @@ header{
     border: 1px solid gray;
 }
 .result{
-    background-color: rgb(146, 146, 146);
+    background-color: rgb(199, 195, 195);
     border-radius: 5px;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: auto;
+    height: 6rem;
     width: 20rem;
     margin-left: 4rem;
 }
@@ -56,9 +56,13 @@ header{
 
 .list-word>h2{
     margin-bottom: 2rem;
+    
+}
+.list-word>input{
+    margin: 0 8px 8px 8px;
 }
 .container-list-word{
-    background-color: rgb(146, 146, 146);
+    background-color: rgb(199, 195, 195);
     border-radius: 5px;
     display: flex;
     justify-content: center;
@@ -68,10 +72,11 @@ header{
     margin-top: 2rem;
     margin-left: 4rem;
     flex-wrap: wrap;
+    padding: 1rem;
 }
 button{
     border: none;
-    background-color: rgb(57, 57, 176);
+    background-color: rgb(0, 179, 255);
     padding: 1rem;
     margin: 1rem;
     width: 20rem;
