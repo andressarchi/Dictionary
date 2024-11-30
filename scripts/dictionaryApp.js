@@ -24,7 +24,7 @@ function translateWord() {
             // Comparar palabra ingresada con las palabras del diccionario
             if ((isEnglish && item.english.toLowerCase() === word) ||
                 (!isEnglish && item.spanish.toLowerCase() === word)) {
-                resultDiv.textContent = `Traducción: ${isEnglish ? item.spanish : item.english}`; // Mostrar traducción
+                resultDiv.textContent = `Traducción:  ${isEnglish ? item.spanish : item.english}`; // Mostrar traducción
                 return; // Detener la función
             }
         }
@@ -47,7 +47,7 @@ function showCategoryWords(categoryName) {
     // Recorrer palabras de la categoría y mostrarlas
     for (const word of category) {
         const listItem = document.createElement('p'); // Crear un elemento <p>
-        listItem.textContent = `${word.english} - ${word.spanish}`; // Asignar texto con las palabras
+        listItem.textContent = `${word.english} - ${word.spanish}  `; // Asignar texto con las palabras
         wordListContainer.appendChild(listItem); // Agregar al contenedor
     }
 }
