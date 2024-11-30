@@ -32,3 +32,33 @@ function translateWord() {
 
     resultDiv.textContent = 'Palabra no encontrada.'; // Si no hay coincidencia, mostrar mensaje
 }
+
+// Función para mostrar palabras de una categoría
+function showCategoryWords(categoryName) {
+    const category = dictionary.categories[categoryName]; // Obtener la categoría
+
+    if (!category) { // Si la categoría no existe
+        wordListContainer.innerHTML = '<p>Categoría no encontrada.</p>'; // Mostrar mensaje
+        return; // Detener la ejecución
+    }
+
+    wordListContainer.innerHTML = ''; // Limpiar contenido previo
+
+    // Recorrer palabras de la categoría y mostrarlas
+    for (const word of category) {
+        const listItem = document.createElement('p'); // Crear un elemento <p>
+        listItem.textContent = `${word.english} - ${word.spanish}`; // Asignar texto con las palabras
+        wordListContainer.appendChild(listItem); // Agregar al contenedor
+    }
+}
+
+// Asignar evento al botón de traducir
+translateButton.addEventListener('click', translateWord);
+
+// Asignar eventos a los botones de categorías
+categoryButtons.forEach(button => {
+    button.addEventListener('click', (event) => {
+        const categoryId = event.target.id.replace('btn-', ''); // Obtener nombre de la categoría
+        showCategoryWords(categoryId); // Mostrar palabras de la categoría
+    });
+});
