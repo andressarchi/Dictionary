@@ -8,6 +8,64 @@ const resultDiv = document.querySelector('.result p'); // Elemento donde se most
 const categoryButtons = document.querySelectorAll('.list-word input[type="radio"]'); // Botones de selección de categorías
 const wordListContainer = document.querySelector('.container-list-word'); // Contenedor para listar palabras de categorías
 
+
+// Elementos del DOM
+const englishInput = document.getElementById('new-word-english');
+const spanishInput = document.getElementById('new-word-spanish');
+const categoryRadios = document.querySelectorAll('input[name="category"]');
+const addButton = document.getElementById('btn-add-word');
+const addResult = document.getElementById('add-result');
+const example= document.getElementById('new-word-example')
+// Función para agregar una palabra al diccionario
+function addWord() {
+    const englishWord = englishInput.value.trim();
+    const spanishWord = spanishInput.value.trim();
+    const exampleWord= example.value.trim();
+    let selectedCategory = null;
+
+    // Obtener la categoría seleccionada
+    for (const radio of categoryRadios) {
+        if (radio.checked) {
+            selectedCategory = radio.value;
+            break;
+        }
+    }
+
+    // Validar que todos los campos estén llenos
+    if (!englishWord || !spanishWord || !selectedCategory ||!exampleWord) {
+        addResult.textContent = 'Por favor, completa todos los campos y selecciona una categoría.';
+        addResult.style.color = 'red';
+        return;
+    }
+
+    // Crear el objeto de la nueva palabra
+    const newWord = {
+        english: englishWord,
+        spanish: spanishWord,
+        example:exampleWord
+    };
+
+    // Agregar la nueva palabra a la categoría seleccionada
+    if (dictionary.categories[selectedCategory]) {
+        dictionary.categories[selectedCategory].push(newWord);
+        addResult.textContent = `Palabra "${englishWord}" añadida a la categoría "${selectedCategory}".`;
+        addResult.style.color = 'green';
+    } else {
+        addResult.textContent = 'Categoría no válida.';
+        addResult.style.color = 'red';
+    }
+
+    // Limpiar los campos de entrada
+    englishInput.value = '';
+    spanishInput.value = '';
+    categoryRadios.forEach(radio => (radio.checked = false)); // Desmarcar radios
+}
+
+// Evento para el botón de agregar palabra
+addButton.addEventListener('click', addWord);
+
+
+
 // Función para traducir palabras
 function translateWord() {
     const word = wordInput.value.trim().toLowerCase(); // Obtener palabra ingresada, eliminando espacios y convirtiendo a minúsculas
@@ -24,7 +82,7 @@ function translateWord() {
             // Comparar palabra ingresada con las palabras del diccionario
             if ((isEnglish && item.english.toLowerCase() === word) ||
                 (!isEnglish && item.spanish.toLowerCase() === word)) {
-                resultDiv.textContent = `Traducción:  ${isEnglish ? item.spanish : item.english}`; // Mostrar traducción
+                resultDiv.textContent = `Traducción:  ${isEnglish ? item.spanish: item.english}`; // Mostrar traducción
                 return; // Detener la función
             }
         }
@@ -47,7 +105,7 @@ function showCategoryWords(categoryName) {
     // Recorrer palabras de la categoría y mostrarlas
     for (const word of category) {
         const listItem = document.createElement('p'); // Crear un elemento <p>
-        listItem.textContent = ` ingles -${word.english} / español- ${word.spanish} `; // Asignar texto con las palabras
+        listItem.textContent = ` ${word.english} -> ${word.spanish} (ejemplo: ${word.example})    `; // Asignar texto con las palabras
         wordListContainer.appendChild(listItem); // Agregar al contenedor
     }
 }

@@ -12,15 +12,15 @@
             <h1>Traductor</h1>
         </header>
 
-        <section>
+       
             <div class="card">
                 <div class="traductor">
                     
                     <label for="word">Palabra/word</label><br>
                     <input type="text" id="word" placeholder="palabra en ingles o Español"><br>
-                    <label for="button-inglesh">Ingles</label>
+                    <label for="button-inglesh">Inglés a español</label>
                     <input type="radio" name="ingles" id="button-inglesh">
-                    <label for="button-spanish">Español</label>
+                    <label for="button-spanish">Español a inglés</label>
                     <input type="radio" name="ingles" id="button-spanish"><br>
 
                     <button id="btn-traslate">Traducir/Traslate</button>
@@ -29,6 +29,57 @@
                         <p>Resultado de la busqueda </p>
                     </div>
                 </div>
+
+
+                <div class="add">
+
+                        <h2>Agregar nueva palabra</h2><br>
+                    <label for="new-word-english">Palabra en Inglés:</label>
+                    <input type="text" id="new-word-english" placeholder="Escribe la palabra en inglés"><br><br>
+
+                    <label for="new-word-spanish">Palabra en Español:</label>
+                    <input type="text" id="new-word-spanish" placeholder="Escribe la palabra en español"><br><br>
+                    
+                    <label for="new-word-example">Ejemplo en ingles:</label>
+                    <input type="text" id="new-word-example" placeholder="escribe un ejemplo "><br><br>
+
+
+
+
+                    <p>Seleccionar categoría:</p><br>
+                    <label for="category-animals">
+                        <input type="radio" name="category" id="category-animals" value="animals"> Animales
+                    </label><br>
+
+                    <label for="category-fruits">
+                        <input type="radio" name="category" id="category-fruits" value="fruits"> Frutas
+                    </label><br>
+
+                    <label for="category-colors">
+                        <input type="radio" name="category" id="category-colors" value="colors"> Colores
+                    </label><br>
+
+                    <label for="category-physical_descriptions">
+                        <input type="radio" name="category" id="category-physical_descriptions" value="physical_descriptions"> Descripciones
+                    </label><br>
+
+                    <label for="category-skills">
+                        <input type="radio" name="category" id="category-skills" value="skills"> Habilidades
+                    </label><br>
+
+                    <label for="category-verbs">
+                        <input type="radio" name="category" id="category-verbs" value="verbs"> Verbos
+                    </label><br>
+
+                    <button id="btn-add-word">Agregar Palabra</button>
+
+                    <div id="add-result">
+                    </div>  
+
+            </div>
+
+
+
                 <div class="list-word">
 
                     <h2>Categorias</h2>
@@ -49,15 +100,17 @@
                     <input type="radio" name="ingles" id="btn-skills"><br>
 
                     
-                    <label for="btn-verbs">Habilidades</label>
+                    <label for="btn-verbs">Verbos</label>
                     <input type="radio" name="ingles" id="btn-verbs"><br>
 
+              
                     <div class="container-list-word">
                         <p>aqui ira el listado de palabras</p>
                     </div><br>
                 </div>
-            </div>
-        </section>
+
+                
+     
     </main>
 </body> 
 <script type="module" src="/scripts/dictionary.js"></script>
